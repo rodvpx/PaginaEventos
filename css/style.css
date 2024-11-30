@@ -63,72 +63,105 @@ body {
 /* Seções */
 /* Estilo base das seções */
 .section {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    opacity: 1; /* Garantir que a seção tenha visibilidade */
-    transition: opacity 1s ease-out; /* Transição suave para a opacidade */
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-out; /* Transição suave para a opacidade */
 }
 
 /* Gradientes nas bordas superior e inferior */
-.section::before, .section::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100px; /* Tamanho do gradiente */
-    pointer-events: none;
-    opacity: 0; /* Inicialmente invisível */
-    transition: opacity 0.5s ease; /* Transição suave para os gradientes */
+.section::before,
+.section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Tamanho do gradiente */
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.8s ease; /* Transição suave para os gradientes */
 }
 
 /* Gradiente superior */
 .section::before {
-    top: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 /* Gradiente inferior */
 .section::after {
-    bottom: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 /* Estilo do conteúdo da seção */
 .section .content {
-    z-index: 2; /* Coloca o conteúdo acima do gradiente */
-    color: white;
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateY(30px); /* Começa deslocado para baixo */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Transição suave */
+  z-index: 2; /* Coloca o conteúdo acima do gradiente */
+  color: white;
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateY(30px); /* Começa deslocado para baixo */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out; /* Transição suave */
 }
 
 /* Quando a seção se torna ativa, exibe o conteúdo */
 .section.active .content {
-    opacity: 1;
-    transform: translateY(0); /* Retorna ao lugar original */
+  opacity: 1;
+  transform: translateY(0); /* Retorna ao lugar original */
 }
 
 /* A seção "ativa" garante que o conteúdo e gradiente apareçam */
-.section.active::before, .section.active::after {
-    opacity: 1; /* Garante que os gradientes fiquem visíveis quando a seção for ativada */
+.section.active::before,
+.section.active::after {
+  opacity: 1; /* Garante que os gradientes fiquem visíveis quando a seção for ativada */
 }
 
 /* A seção ativa também garante que a imagem tenha o gradiente desde o início */
-.section.active {
-    opacity: 1;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url('sua-imagem.jpg');
-    background-size: cover;
-    background-position: center;
+.section.active .background {
+  opacity: 1;
 }
 
+.section .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+  z-index: -1; /* Fica atrás do conteúdo */
+}
 
+/* Efeitos de Fundo e Texto */
+.section.active .background {
+  opacity: 1; /* Quando a seção se ativa, a imagem de fundo vai aparecer */
+}
+
+.section.active {
+  opacity: 1; /* Garante que a seção ativa seja visível */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)),
+    url("sua-imagem.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Formulário */
 .full-screen {
   scroll-snap-align: start;
 }
