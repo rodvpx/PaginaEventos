@@ -3,25 +3,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* Smooth scroll para navegação mais fluída */
 }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #fff;
   background-color: #000;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Impede rolagem horizontal */
 }
 
 /* Navbar */
-
 .navbar {
-  position: fixed;
+  position: fixed; /* Fixa a barra de navegação no topo */
   top: 0;
   width: 100%;
   padding: 20px;
-  z-index: 1000;
-  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000; /* Garante que a navbar fique acima de outros elementos */
+  background: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
 }
 
 .navbar nav {
@@ -39,7 +38,7 @@ body {
 .navbar a {
   text-decoration: none;
   color: #fff;
-  font-weight: bold;
+  font-weight: bold; /* Destaque para os links */
 }
 
 /* Estilo do logo com texto */
@@ -47,7 +46,7 @@ body {
   display: flex; /* Coloca logo e texto lado a lado */
   align-items: center; /* Centraliza no eixo vertical */
   text-decoration: none; /* Remove sublinhado do link */
-  color: #fff; /* Define a cor do texto */
+  color: #fff; /* Cor do texto */
 }
 
 .navbar .logo img {
@@ -57,11 +56,45 @@ body {
 
 .navbar .logo span {
   font-size: 1.5rem; /* Tamanho do texto */
-  font-weight: bold; /* Texto mais destacado */
+  font-weight: bold;
+}
+
+/* Estilo do menu hambúrguer */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilos para dispositivos móveis */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none; /* Esconde o menu por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #333;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-links.active {
+    display: flex; /* Exibe o menu quando a classe 'active' for adicionada */
+  }
+
+  .menu-icon {
+    display: block; /* Exibe o ícone do menu hambúrguer */
+  }
+
+  .nav-links li {
+    margin: 10px 0; /* Espaçamento entre os itens do menu */
+  }
 }
 
 /* Seções */
-
 .section {
   position: relative;
   height: 100vh;
@@ -234,7 +267,6 @@ form button {
   transform: translateY(0);
 }
 
-/* Ajusta a organização da seção */
 /* Ajusta a organização da seção */
 #about {
   height: 200vh; /* Aumenta a altura da seção para 150% da altura da tela */

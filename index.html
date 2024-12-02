@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tomorrowland 2025</title>
+    <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -15,8 +16,15 @@
           <img src="./img/logo.png" alt="Logo Tomorrowland" />
           <span>Tomorrowland</span>
         </a>
+
+        <!-- Ícone do menu hambúrguer para dispositivos móveis -->
+        <div class="menu-icon" id="menu-icon">
+          &#9776;
+          <!-- Ícone de 3 linhas -->
+        </div>
+
         <!-- Links de navegação -->
-        <ul>
+        <ul class="nav-links" id="nav-links">
           <li><a href="#about">Sobre</a></li>
           <li><a href="#pre-register">Pré Registro</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -25,7 +33,7 @@
       </nav>
     </header>
 
-    <!-- Seção Inicial -->
+    <!-- Seção Inicial: Apresentação do evento -->
     <section
       id="home"
       class="section full-screen"
@@ -43,7 +51,8 @@
         </p>
       </div>
     </section>
-    <!-- Seção 2 -->
+
+    <!-- Seção "Sobre" -->
     <section
       id="about"
       class="section full-screen"
@@ -62,6 +71,7 @@
           </p>
         </div>
       </div>
+      <!-- Vídeo sobre o tema ORBYZ do festival -->
       <div class="video-container">
         <iframe
           src="https://www.youtube.com/embed/-HXoNwTYFRs"
@@ -102,12 +112,10 @@
           </p>
           <p class="event-date">Boom, Bélgica</p>
         </div>
-        <!-- Fechar a div da class event-dates -->
       </div>
-      <!-- Fechar a div content -->
     </section>
 
-    <!-- Seção 3: Pré-Registro -->
+    <!-- Seção de Pré-Registro -->
     <section
       id="pre-register"
       class="section full-screen"
@@ -120,9 +128,10 @@
         </div>
       </div>
 
-      <!-- Slider de Imagens -->
+      <!-- Slider de Imagens das edições anteriores do festival -->
       <div class="image-slider">
         <div class="slider-container">
+          <!-- Cada slide de imagem tem uma sobreposição com o ano -->
           <div class="slide">
             <div class="overlay">
               <h3 class="year">2024</h3>
@@ -148,13 +157,13 @@
             <img src="./img/slider/2021.png" alt="Edição 2021" />
           </div>
         </div>
+        <!-- Botões de navegação do slider -->
         <button class="prev" id="prev">&#10094;</button>
         <button class="next" id="next">&#10095;</button>
       </div>
     </section>
-    <!-- Fechar a seção corretamente aqui -->
 
-    <!-- Seção 4: FAQ -->
+    <!-- Seção FAQ -->
     <section
       id="faq"
       class="section full-screen"
@@ -168,6 +177,7 @@
         </p>
 
         <div class="faq-container">
+          <!-- Cada item de FAQ é um botão que revela a resposta -->
           <div class="faq-item">
             <button class="faq-question">Qual é a data do evento?</button>
             <div class="faq-answer">
@@ -208,6 +218,7 @@
     >
       <div class="content">
         <h2>Entre em Contato</h2>
+        <!-- Formulário de contato -->
         <form id="contact-form">
           <input type="text" placeholder="Seu Nome" required />
           <input type="email" placeholder="Seu E-mail" required />
@@ -217,6 +228,7 @@
       </div>
     </section>
 
+    <!-- Link para o arquivo JavaScript -->
     <script src="./javascript/script.js"></script>
   </body>
 </html>
